@@ -1,0 +1,27 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+
+# To copy local udev rules in chromebook udev rules.
+# It can't be done directly due to write only files system.
+#mkdir -p /run/udev/rules.d
+#cp /etc/udev/rules.d/*.rules /run/udev/rules.d
+#udevadm control --reload
+
+# dbus script for SD card auto mount
+mount /dev/mmcblk1p1 /home/hoel/SD > /tmp/Log_mount_SD_card 2>&1 &
+sleep 1
+/home/hoel/Smart_home/Script_chromebook/auto_umount_mmcblk1p1.sh >> /tmp/Log_mount_SD_card 2>&1 &
+/home/hoel/Smart_home/Script_chromebook/auto_mount_mmcblk1p1.sh >> /tmp/Log_mount_SD_card 2>&1 &
+
+exit 0
