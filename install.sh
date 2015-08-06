@@ -16,12 +16,15 @@ apt-get install -y gnome-terminal file-roller nano
 apt-get install -y bash-completion vlc eog evince build-essential
 # could also add ubuntu-restricted-extras ttf-ubuntu-font-family software-center synaptic
 
+todo : install locate and update locate base
+
 #### Libre office ####
 apt-get install -y libreoffice-writer libreoffice-calc
 apt-get install -y libreoffice-gnome
 
 #### Latex ####
 apt-get install -y texlive-full
+todo : install only needed package
 # note : takes almost 3Go alone
 
 #### Chromium ####
@@ -42,6 +45,7 @@ gsettings set org.gnome.desktop.media-handling automount-open false
 cp $HOME/Smart_home/Script_chromebook/rc.local /etc/
 mkdir $HOME/SD
 mount /dev/mmcblk1p1 $HOME/SD
+ln -s $HOME/Smart_home/Script_chromebook/sd /usr/local/bin/
 
 #### Dropbox ####
 wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
@@ -56,6 +60,7 @@ apt-get install -y steam
 #### logout_ubuntu ####
 ln -s $HOME/Smart_home/Script_chromebook/logout_ubuntu /usr/local/bin/
 
+
 #### Sublime text ####
 mkdir $HOME/tmp
 wget -P $HOME/tmp/ http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.2%20x64.tar.bz2
@@ -66,13 +71,24 @@ rm -rf $HOME/tmp
 $HOME/SD/Dropbox/Save_Sublime_text/copy_settings_linux.sh
 
 #### Save video game ####
+#### Save Prison architecte ####
+rm -r $HOME/.Prison\ Architect/saves
+mkdir $HOME/.Prison\ Architect
+ln -s $HOME/SD/Dropbox/Save_Game/Prison\ Architect/saves $HOME/.Prison\ Architect/
+#### Save FTL ####
+rm -r $HOME/.local/share/FasterThanLight
+ln -s $HOME/SD/Dropbox/Save_Game/FasterThanLight $HOME/.local/share/FasterThanLight
+#### Save Hotline Miami ####
+rm -r $HOME/.local/share/HotlineMiami2
+ln -s $HOME/SD/Dropbox/Save_Game/HotlineMiami2 $HOME/.local/share/HotlineMiami2
+#### Save Don't Starve ####
+# automatic with linux
+#### Save Kerbal Space Program ####
 mkdir $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program
 mkdir $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program/saves
+rm $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program/saves/hoel
 ln -s $HOME/SD/Dropbox/Save_Game/Kerbal\ space\ program/hoel $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program/saves/
-mkdir $HOME/SD/Steam/.steam/steam/steamapps/common/Prison\ architecte
-ln -s $HOME/SD/Dropbox/Save_Game/Prison\ architecte/saves $HOME/SD/Steam/.steam/steam/steamapps/common/Prison\ architecte/
-ln -s $HOME/SD/Dropbox/Save_Game/FasterThanLight $HOME/SD/Steam/.steam/steam/steamapps/common/
-#ln -s $HOME/SD/Dropbox/Save_Game/Dont\ Starve/ $HOME/SD/Steam/.steam/steam/steamapps/common/
+
 
 #### Final clean up ####
 apt-get autoremove -y

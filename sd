@@ -1,0 +1,3 @@
+sudo umount $HOME/SD/
+sleep 0.2
+sudo mount /dev/mmcblk1p1 $HOME/SD/
