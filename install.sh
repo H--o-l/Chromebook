@@ -12,19 +12,16 @@ apt-get upgrade
 apt-get install -y gnome-terminal file-roller nano
 # todo : in gnome terminal, edit->profile preferences->font 11 & not terminal bell & custom default terminal size 120x36 or more & scrolling unlimited
 # todo : add gnome terminal in launcher
-
 apt-get install -y bash-completion vlc eog evince build-essential
 # could also add ubuntu-restricted-extras ttf-ubuntu-font-family software-center synaptic
-
-todo : install locate and update locate base
+# todo : install locate and update locate base
 
 #### Libre office ####
-apt-get install -y libreoffice-writer libreoffice-calc
-apt-get install -y libreoffice-gnome
+# apt-get install -y libreoffice-writer libreoffice-calc
+# apt-get install -y libreoffice-gnome
 
 #### Latex ####
-apt-get install -y texlive-full
-todo : install only needed package
+# apt-get install -y texlive-full
 # note : takes almost 3Go alone
 
 #### Chromium ####
@@ -42,14 +39,14 @@ git config --global user.email "$USER.iris@gmail.com"
 #### SD card ####
 gsettings set org.gnome.desktop.media-handling automount false
 gsettings set org.gnome.desktop.media-handling automount-open false
-cp $HOME/Smart_home/Script_chromebook/rc.local /etc/
+cp $HOME/Chromebook/rc.local /etc/
 mkdir $HOME/SD
 mount /dev/mmcblk1p1 $HOME/SD
-ln -s $HOME/Smart_home/Script_chromebook/sd /usr/local/bin/
+ln -s $HOME/Chromebook/sd /usr/local/bin/
 
 #### Dropbox ####
 wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
-cp $HOME/Smart_home/Script_chromebook/dropbox_autostart.desktop $HOME/.config/autostart/
+cp $HOME/Chromebook/dropbox_autostart.desktop $HOME/.config/autostart/
 
 #### Steam ####
 mkdir $HOME/SD/Steam
@@ -58,7 +55,7 @@ ln -s $HOME/SD/Steam/.steam $HOME/.steam
 apt-get install -y steam
 
 #### logout_ubuntu ####
-ln -s $HOME/Smart_home/Script_chromebook/logout_ubuntu /usr/local/bin/
+ln -s $HOME/Chromebook/logout_ubuntu /usr/local/bin/
 
 
 #### Sublime text ####
@@ -95,4 +92,3 @@ apt-get autoremove -y
 apt-get clean
 
 # note : size at this point should be around 7.4Go
-
