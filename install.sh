@@ -16,6 +16,10 @@ apt-get install -y bash-completion vlc eog evince build-essential
 # could also add ubuntu-restricted-extras ttf-ubuntu-font-family software-center synaptic
 # todo : install locate and update locate base
 
+#### Keyring
+apt-get install seahorse
+# todo in keyring, right click on login password, change password and set a blank password
+
 #### Libre office ####
 # apt-get install -y libreoffice-writer libreoffice-calc
 # apt-get install -y libreoffice-gnome
