@@ -71,25 +71,23 @@ ln -s /usr/local/bin/sublime_text/sublime_text /usr/local/bin/sb
 rm -rf $HOME/tmp
 $HOME/SD/Dropbox/Save_Sublime_text/copy_settings_linux.sh
 
+#### bashrc ####
+# use mackup
+
 #### Save video game ####
 #### Save Prison architecte ####
-rm -r $HOME/.Prison\ Architect/saves
-mkdir $HOME/.Prison\ Architect
-ln -s $HOME/SD/Dropbox/Save_Game/Prison\ Architect/saves $HOME/.Prison\ Architect/
+# use mackup
 #### Save FTL ####
-rm -r $HOME/.local/share/FasterThanLight
-ln -s $HOME/SD/Dropbox/Save_Game/FasterThanLight $HOME/.local/share/FasterThanLight
+# use mackup
 #### Save Hotline Miami ####
-rm -r $HOME/.local/share/HotlineMiami2
-ln -s $HOME/SD/Dropbox/Save_Game/HotlineMiami2 $HOME/.local/share/HotlineMiami2
+# use mackup
 #### Save Don't Starve ####
-# automatic with linux
+# automatic with steam
 #### Save Kerbal Space Program ####
 mkdir $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program
 mkdir $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program/saves
 rm $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program/saves/hoel
 ln -s $HOME/SD/Dropbox/Save_Game/Kerbal\ space\ program/hoel $HOME/SD/Steam/.steam/steam/steamapps/common/Kerbal\ Space\ Program/saves/
-
 
 #### Final clean up ####
 apt-get autoremove -y
